@@ -1,21 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Routes from './routes';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Security } from "@okta/okta-react";
 
-import './index.css';
+import App from "./components/App";
+import registerServiceWorker from "./registerServiceWorker";
 
-import { Provider } from 'react-redux';
-import { applyMiddleware, createStore } from 'redux';
-import { createLogger } from 'redux-logger';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers';
-
-const middleware = applyMiddleware(thunk, createLogger());
-export const store = createStore(rootReducer, middleware);
+const oktaConfig = {
+  issuer: `${process.env.REACT_APP_OKTA_ORG_URL}/oauth2/default`,
+  redirect_uri: `${window.location.origin}/implicit/callback`,
+  client_id: process.env.REACT_APP_OKTA_CLIENT_ID
+};
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Routes />
-  </Provider>,
-  document.getElementById('root')
+  <BrowserRouter>
+    <Security {...oktaConfig}>
+      <App />
+    </Security>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
+registerServiceWorker();
+
+if (module.hot) module.hot.accept();
