@@ -2,7 +2,7 @@
 
 const Sequelize = require("sequelize");
 const db = require("../index.js");
-const people = require("./people");
+// const people = require("./people");
 
 const Debits = db.define("debits", {
   transaction_id: {
@@ -11,20 +11,24 @@ const Debits = db.define("debits", {
     primaryKey: true
   },
   person_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: people,
-      key: "person_id",
-      deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-    }
+    type: Sequelize.INTEGER
+    // references: {
+    //   model: people,
+    //   key: "person_id",
+    //   deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+    // }
   },
-  title: {
-    type: Sequelize.STRING,
-    allowNull: false
+  donations: {
+    type: Sequelize.FLOAT
   },
-  post: {
-    type: Sequelize.TEXT,
-    allowNull: false
+  tithes: {
+    type: Sequelize.FLOAT
+  },
+  collection: {
+    type: Sequelize.FLOAT
+  },
+  miscellaneous: {
+    type: Sequelize.FLOAT
   },
   created_at: {
     type: Sequelize.DATE

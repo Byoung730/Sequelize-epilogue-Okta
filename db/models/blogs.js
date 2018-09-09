@@ -2,7 +2,7 @@
 
 const Sequelize = require("sequelize");
 const db = require("../index.js");
-const people = require("./people");
+// const people = require("./people");
 
 // validate: {
 //   notEmpty: true,
@@ -18,12 +18,12 @@ const Blogs = db.define("blogs", {
     primaryKey: true
   },
   person_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      model: people,
-      key: "person_id",
-      deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
-    }
+    type: Sequelize.INTEGER
+    // references: {
+    //   model: people,
+    //   key: "person_id",
+    //   deferrable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
+    // }
   },
   title: {
     type: Sequelize.STRING,

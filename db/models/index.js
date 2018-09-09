@@ -1,9 +1,9 @@
 "use strict";
 
 const People = require("./people");
-// const Blogs = require("./blogs");
-// const Debits = require("./debits");
-// const Credits = require("./credits");
+const Blogs = require("./blogs");
+const Debits = require("./debits");
+const Credits = require("./credits");
 
 // People.hasMany(Blogs);
 // Blogs.belongsTo(People);
@@ -12,4 +12,4 @@ const People = require("./people");
 // People.hasMany(Credits);
 // Credits.belongsTo(People);
 
-module.exports = { People }; // Debits, Blogs, Credits };
+module.exports = { People, Debits, Blogs, Credits };
