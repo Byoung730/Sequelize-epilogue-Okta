@@ -124,7 +124,7 @@ class PeopleManager extends Component {
                   to={`/people/${people.person_id}`}
                 >
                   <ListItemText
-                    primary={people.last_name}
+                    primary={people.first_name + " " + people.last_name}
                     secondary={
                       people.updated_at &&
                       `Updated ${moment(people.updatedAt).fromNow()}`
