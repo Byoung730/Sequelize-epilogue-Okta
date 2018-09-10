@@ -41,7 +41,7 @@ const database = new Sequelize("church", "evrvj", "gangster", {
 });
 
 const People = database.define("people", {
-  person_id: {
+  id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     primaryKey: true
