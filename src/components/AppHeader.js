@@ -19,7 +19,7 @@ const AppHeader = ({ classes }) => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="title" color="inherit">
-        Empowered Church
+        Community Builder
       </Typography>
       <Button color="inherit" component={Link} to="/">
         Home

@@ -71,10 +71,10 @@ class PeopleManager extends Component {
   }
 
   savePeople = async people => {
-    if (people.person_id) {
-      await this.fetch("put", `/people/${people.person_id}`, people);
+    if (people.email) {
+      await this.fetch("put", `/people/${people.length}`, people);
     } else {
-      await this.fetch("people", "/people", people);
+      await this.fetch("get", "/people", people);
     }
 
     this.props.history.goBack();

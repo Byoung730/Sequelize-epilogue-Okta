@@ -72,6 +72,15 @@ const PeopleEditor = ({ classes, info, onSave, history }) => (
                   <TextField label="Email" autoFocus {...input} />
                 )}
               </Field>
+              <Field name="id">
+                {({ input }) => (
+                  <TextField
+                    className={classes.marginTop}
+                    label="ID (integer)"
+                    {...input}
+                  />
+                )}
+              </Field>
               <Field name="first_name">
                 {({ input }) => (
                   <TextField
@@ -135,29 +144,11 @@ const PeopleEditor = ({ classes, info, onSave, history }) => (
                   />
                 )}
               </Field>
-              <Field name="date_baptized">
-                {({ input }) => (
-                  <TextField
-                    className={classes.marginTop}
-                    label="Date Baptized"
-                    {...input}
-                  />
-                )}
-              </Field>
               <Field name="birthdate">
                 {({ input }) => (
                   <TextField
                     className={classes.marginTop}
                     label="Birthdate"
-                    {...input}
-                  />
-                )}
-              </Field>
-              <Field name="date_deceased">
-                {({ input }) => (
-                  <TextField
-                    className={classes.marginTop}
-                    label="Date Deceased"
                     {...input}
                   />
                 )}
